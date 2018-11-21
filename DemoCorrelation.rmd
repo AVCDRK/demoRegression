@@ -50,11 +50,11 @@ plot(density(bucket))
 ### x and y are vectors and their sumproduct is a dot-product. They both have the same length. The original dot product is their length squared, any permutation of y produces a vector of the same length but their dot product is then reduced by the cosine of the angle between them, so basically the correlation between x and z is the cosine of the angle between x and z as vectors. The cosine relationship is true if the two vectors are centered at zero (ie both are translated to their respective means - this is why we made up our example to be 'balanced at zero'. Once the vectors have been translated to (0,0) any multiplicative factor applied to either of them is simply a stretching or shrinking of that measurement scale and as such wont effect the angle between them and thus will not change the size of their correlation (it could of course change its sign). The code below demonstrates this.
 ```{r}
 if(!require("pracma")) {install.packages("pracma");require("pracma")}
-
 dot(x,z)
 print(vec_cos(x,z))
 (zz=5*z)
 (xx= -3*x)
 print(vec_cos(xx,zz))
 ```
+
 
